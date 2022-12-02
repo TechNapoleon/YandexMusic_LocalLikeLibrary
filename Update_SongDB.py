@@ -66,7 +66,7 @@ while True:
         break
     track = tracks_for_download[cnt]
     try:
-        name = track.title
+        name = track.title.replace("\\","").replace("/","")
         artist = track.artists[0].name
         print(cnt, " Processing {} by artist {}. ".format(name, artist))
         track.download(name + '.mp3')
